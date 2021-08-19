@@ -1,0 +1,1 @@
+The idea is to use Riot's API to get the tier + rank + league points of a given summoner. Then create an overlay where I can display such data. 
