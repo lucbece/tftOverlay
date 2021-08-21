@@ -33,3 +33,4 @@ def get_league_rank(rankData):
     print(gameName + '\n' + 'Rank: ' + tier + ' ' + rank + '\n' + 'LP: ' + leaguePoints)
 
     
+    
