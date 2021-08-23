@@ -1,5 +1,6 @@
 import requests
 from requests.exceptions import HTTPError
+import os
 
 with open('devKEY.txt') as f:
     KEY = f.readline()
@@ -29,8 +30,11 @@ def get_league_rank(rankData):
 
     return [tier,rank,leaguePoints]
 
+def get_photo_path(league):
+    path = str(os.getcwd()) + '/media/' + str(league).lower() + '.png'
+    print(path)
+    return path
 
-    print(gameName + '\n' + 'Rank: ' + tier + ' ' + rank + '\n' + 'LP: ' + leaguePoints)
 
     
     
