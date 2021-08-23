@@ -5,7 +5,7 @@ import os
 with open('devKEY.txt') as f:
     KEY = f.readline()
 
-def gather_data(summonerName, region):    
+def request_data(summonerName, region):    
     try:
         response = requests.get('https://la2.api.riotgames.com/tft/summoner/v1/summoners/by-name/' + summonerName + '?api_key=' + KEY)
     except HTTPError as http_err:
@@ -19,7 +19,6 @@ def gather_data(summonerName, region):
 
         rankedRequest = requests.get('https://la2.api.riotgames.com/tft/league/v1/entries/by-summoner/' + summonerID + '?api_key=' + KEY)
         rankData = rankedRequest.json()
-        print(type(rankData))
 
         return rankData
 
@@ -30,10 +29,6 @@ def get_league_rank(rankData):
 
     return [tier,rank,leaguePoints]
 
-def get_photo_path(league):
-    path = str(os.getcwd()) + '/media/' + str(league).lower() + '.png'
-    print(path)
-    return path
 
 
     
