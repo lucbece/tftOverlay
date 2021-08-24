@@ -75,7 +75,7 @@ QPushButton:hover
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>130</y>
+      <y>140</y>
       <width>451</width>
       <height>461</height>
      </rect>
@@ -90,7 +90,7 @@ QPushButton:hover
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>410</y>
+       <y>400</y>
        <width>411</width>
        <height>41</height>
       </rect>
@@ -144,7 +144,7 @@ QPushButton:hover
       <string notr="true"/>
      </property>
      <property name="text">
-      <string notr="true">Account's Name</string>
+      <string notr="true">Username</string>
      </property>
      <property name="maxLength">
       <number>32767</number>
@@ -157,10 +157,10 @@ QPushButton:hover
    <widget class="QToolButton" name="toolButton">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>460</x>
       <y>60</y>
-      <width>151</width>
-      <height>141</height>
+      <width>131</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="text">
