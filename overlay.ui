@@ -17,10 +17,11 @@
    <string notr="true">*{
 	font-family: century gothic;
 	font-size: 22px;
+	color: white;
 }
 QFrame
 {
-	background:#333;
+	background:rgba(3,3,3,150);
 	border-radius:15px;
 }
 
@@ -32,11 +33,9 @@ color:white;
 border-bottom: 1px solid white;
 }
 
-QComboBox
+QLabel
 {
-background:transparent;
-border:none;
-color:white;
+background:rgba(3,3,3,0)
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -58,14 +57,14 @@ color:white;
     <widget class="QLabel" name="leaguePhoto">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>400</x>
        <y>20</y>
-       <width>121</width>
-       <height>121</height>
+       <width>128</width>
+       <height>128</height>
       </rect>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -74,14 +73,17 @@ color:white;
     <widget class="QLabel" name="leagueText">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>50</y>
+       <x>20</x>
+       <y>20</y>
        <width>281</width>
-       <height>61</height>
+       <height>121</height>
       </rect>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
     </widget>
    </widget>

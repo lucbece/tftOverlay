@@ -30,7 +30,7 @@ class loginGUI(QMainWindow):
         rawData = rankedData.request_data(summonerName,region)
         parsedData = rankedData.get_league_rank(rawData)
 
-        self.overlay.leagueText.setText(parsedData[0] + "\n" + parsedData[1])
+        self.overlay.leagueText.setText(parsedData[0]+ " " + parsedData[1] + "\n" + parsedData[2] + " LP")
         self.overlay.leaguePhoto.setPixmap(QtGui.QPixmap('media/' + parsedData[0] + '.png'))
         self.overlay.show()
 
