@@ -20,7 +20,7 @@ def request_data(summonerName, region):
         rankedRequest = requests.get('https://la2.api.riotgames.com/tft/league/v1/entries/by-summoner/' + summonerID + '?api_key=' + KEY)
         rankData = rankedRequest.json()
 
-        return rankData
+        return rankData,summonerData
 
 def get_league_rank(rankData):    
     tier = rankData[0]['tier']
@@ -31,5 +31,22 @@ def get_league_rank(rankData):
 
 
 
-    
+def get_match_history(puuid):
+    matchList = requests.get('https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'+puuid+'/ids?count=3&api_key=' + KEY)
+    matchIds = matchList.json()
+    matchPlacements = []
+    for match in matchIds:
+        matchRequest = requests.get("https://americas.api.riotgames.com/tft/match/v1/matches/" + match +"?api_key=" + KEY)
+        matchData = matchRequest.json()
+        foundSummoner = False
+        j=0
+        while (not foundSummoner and j<8):
+            playerTemp = matchData["info"]["participants"]
+            if (playerTemp[j]["puuid"] == puuid):
+                matchPlacements.append(playerTemp[j]["placement"])
+                foundSummoner = True
+            else:
+                j+=1        
+
+    return matchPlacements
     

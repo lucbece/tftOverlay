@@ -27,12 +27,17 @@ class loginGUI(QMainWindow):
         summonerName = self.summonerEntry.text()
         region = str(self.regionList.currentText())
 
-        rawData = rankedData.request_data(summonerName,region)
+        rawData, summonerData = rankedData.request_data(summonerName,region)
         parsedData = rankedData.get_league_rank(rawData)
+        puuid = summonerData["puuid"]
+        matchPlacements = rankedData.get_match_history(puuid)
 
         self.overlay.leagueText.setText(parsedData[0]+ " " + parsedData[1] + "\n" + parsedData[2] + " LP")
         self.overlay.leaguePhoto.setPixmap(QtGui.QPixmap('media/' + parsedData[0] + '.png'))
+        self.overlay.placementText.setText(str(matchPlacements[0]) + "\n" + str(matchPlacements[1]) + "\n" + str(matchPlacements[2]) )
         self.overlay.show()
+
+
 
         
 
