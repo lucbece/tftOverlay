@@ -32,6 +32,11 @@ class loginGUI(QMainWindow):
         puuid = summonerData["puuid"]
         matchPlacements = rankedData.get_match_history(puuid)
 
+        print(rawData)
+        print(summonerData)
+        print("puuid: " + puuid)
+        print(matchPlacements)
+
         self.overlay.leagueText.setText(parsedData[0]+ " " + parsedData[1] + "\n" + parsedData[2] + " LP")
         self.overlay.leaguePhoto.setPixmap(QtGui.QPixmap('media/' + parsedData[0] + '.png'))
         self.overlay.placementText.setText(str(matchPlacements[0]) + "\n" + str(matchPlacements[1]) + "\n" + str(matchPlacements[2]) )

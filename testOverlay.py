@@ -20,6 +20,14 @@ parsedData = rankedData.get_league_rank(rawData)
 puuid = summonerData["puuid"]
 matchPlacements = rankedData.get_match_history(puuid)
 
+        
+print(rawData)
+print(summonerData)
+
+print(parsedData)
+print("puuid: " + puuid)
+print(matchPlacements)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
